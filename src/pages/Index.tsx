@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import CertificateGenerator from "@/components/CertificateGenerator";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -53,36 +54,24 @@ const Index = () => {
             </Button>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Generate Certificate</CardTitle>
-                <CardDescription>Create new certificates for recipients</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button className="w-full">Generate New Certificate</Button>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Quick Actions</CardTitle>
+                  <CardDescription>Manage your certificate system</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <Button className="w-full">View All Certificates</Button>
+                  <Button className="w-full" variant="secondary">Download Reports</Button>
+                  <Button className="w-full" variant="outline">System Settings</Button>
+                </CardContent>
+              </Card>
+            </div>
             
-            <Card>
-              <CardHeader>
-                <CardTitle>View Certificates</CardTitle>
-                <CardDescription>Browse and manage existing certificates</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button className="w-full" variant="secondary">View All Certificates</Button>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardHeader>
-                <CardTitle>Settings</CardTitle>
-                <CardDescription>Configure system settings and templates</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button className="w-full" variant="outline">Open Settings</Button>
-              </CardContent>
-            </Card>
+            <div>
+              <CertificateGenerator />
+            </div>
           </div>
         </div>
       </div>
